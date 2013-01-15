@@ -1,0 +1,22 @@
+{
+    "name": "hatimeria/extjs-bundle",
+    "type": "library",
+    "description": "ExtJS Bundle is an ExtJS (JavaScript framework) Direct Backend Implementation for Symfony2 Framework.",
+    "keywords": ["ExtJS"],
+    "homepage": "https://github.com/hatimeria/HatimeriaExtJSBundle",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": ">=2.1,<2.3-dev"
+    },
+    "autoload": {
+        "psr-0": { "Hatimeria\\ExtJSBundle": "" }
+    },
+    "target-dir": "Hatimeria/ExtJSBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.1.x-dev"
+        }
+    }
+}
