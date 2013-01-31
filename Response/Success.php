@@ -12,7 +12,7 @@ use Hatimeria\ExtJSBundle\Parameter\ParameterBag;
 class Success implements Response
 {
     /**
-     * Content in direct format
+     * New content
      *
      * @var array
      */
