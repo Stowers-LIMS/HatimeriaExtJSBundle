@@ -94,9 +94,6 @@ class Router
         
         $event = new FilterControllerEvent($this->container->get("kernel"), array($controller, $method), $this->container->get('request'), 'GET');
         
-        $listener = $this->container->get("security.extra.controller_listener");
-        $listener->onCoreController($event);
-
         $controller = $event->getController();
         
         if (!is_callable($controller)) {
