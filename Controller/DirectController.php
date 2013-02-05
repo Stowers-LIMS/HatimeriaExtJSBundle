@@ -29,8 +29,14 @@ class DirectController extends Controller
         
         $response = sprintf("Ext.syncRequire(['Ext.direct.Manager','Ext.direct.RemotingProvider'], function() { 
                 Ext.direct.Manager.addProvider(%s); 
-                // fixes app_dev.php missing prefix
-                Ext.direct.Manager.getProvider(0).url = Routing.prefix + Ext.direct.Manager.getProvider(0).url;
+
+                // adean
+                // Use fosjs routing to determine the routing prefix
+                // Note that in the case of multiple Ext.Direct providers we need to make
+                // sure that we're working with the one we just added.
+                var providerIdx = Ext.direct.Manager.providers.length - 1;
+                var routingProvider = Ext.direct.Manager.getProvider(providerIdx);
+                routingProvider.url = Routing.getBaseUrl() + routingProvider.url;
             }, window); ", $api);
         // @todo move aditional content to direct parameters class 
         $response .= sprintf("
